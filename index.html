@@ -12,27 +12,33 @@
 <body>
   <div class="main">
     <div class="screen-container">
-      <p><span id="value"></span><span id="operator"></span></p>
-      <input id="input" type="text" value="">
+      <div class="result-screen"><span id="value"></span><span id="operator"></span></div>
+      <div class="input"><input id="input" type="text" value=""></div>
     </div>
     <div class="keyboard">
-      <button onclick="handleButton('1')">1</button>
-      <button onclick="handleButton('2')">2</button>
-      <button onclick="handleButton('3')">3</button>
-      <button onclick="handleButton('4')">4</button>
-      <button onclick="handleButton('5')">5</button>
-      <button onclick="handleButton('6')">6</button>
-      <button onclick="handleButton('7')">7</button>
-      <button onclick="handleButton('8')">8</button>
-      <button onclick="handleButton('9')">9</button>
-      <button onclick="handleButton('0')">0</button>
-      <button onclick="handleButton('.')">.</button>
-      <button onclick="removeLastCharacter()">DEL</button>
-      <button onclick="handleOperator('*')">x</button>
-      <button onclick="handleOperator('/')">:</button>
-      <button onclick="handleOperator('+')">+</button>
-      <button onclick="handleOperator('-')">-</button>
-      <button onclick="calculationOperation()">=</button>
+      <div class="numbers">
+        <button onclick="handleButton('9')">9</button>
+        <button onclick="handleButton('8')">8</button>
+        <button onclick="handleButton('7')">7</button>
+        <button onclick="handleButton('6')">6</button>
+        <button onclick="handleButton('5')">5</button>
+        <button onclick="handleButton('4')">4</button>
+        <button onclick="handleButton('3')">3</button>
+        <button onclick="handleButton('2')">2</button>
+        <button onclick="handleButton('1')">1</button>
+        <button onclick="handleButton('0')">0</button>
+        <button onclick="handleButton('.')">.</button>
+      </div>
+      
+      <div class="function-btn">
+        <button onclick="removeLastCharacter()">DEL</button>
+        <button onclick="removeAllCharacters()">C</button>
+        <button onclick="handleOperator('*')">x</button>
+        <button onclick="handleOperator('/')">:</button>
+        <button onclick="handleOperator('+')">+</button>
+        <button onclick="handleOperator('-')">-</button>
+        <button id="equals-btn" onclick="calculationOperation()">=</button>
+      </div>
     </div>
   </div>
 

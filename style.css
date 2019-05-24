@@ -1,0 +1,63 @@
+.main {
+  background-color: rgba(60,60,60,0.6);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.screen-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+}
+
+.result-screen {
+  height: 50%;
+  border: none;
+  background-color: white;
+  margin: 20px;
+}
+
+#input {
+  display: flex;
+  justify-content: flex-end;
+  height: 30px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: row;
+}
+
+.keyboard button {
+  font-weight: 600;
+  border: none;
+  background-color: #cbc7c3;
+  height: 40px;
+  width: 40px;
+  margin: 10px 5px;
+}
+
+.numbers {
+  width: 50%;
+  margin-left: 5%;
+}
+
+.numbers button {
+  float: left; 
+}
+
+.function-btn {
+  width: 40%;
+}
+
+.function-btn button {
+  float: right;
+}
+
+#equals-btn {
+  background-color: #a59e99;
+}

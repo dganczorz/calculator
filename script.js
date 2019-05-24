@@ -8,11 +8,20 @@ var operator;
 
 function handleButton(selectedNumber) {
   input = document.getElementById('input').value;
-  input += selectedNumber;
-  appendCharacterToResultString(selectedNumber);
+  if (input == "" && selectedNumber == ".") {
+    input = "0.";
+    appendCharacterToInputString("0" + selectedNumber);
+  }
+  else if (input.includes(".") && selectedNumber == ".") {
+    alert("You cannot use two commas in number!");
+  }
+  else {
+    input += selectedNumber;
+    appendCharacterToInputString(selectedNumber);
+  }
 }
 
-function appendCharacterToResultString(mark) {
+function appendCharacterToInputString(mark) {
   document.getElementById('input').value += mark;
 }
 
@@ -20,6 +29,15 @@ function removeLastCharacter() {
   let resultString = document.getElementById('input').value;
   let currentString = resultString.substr(0, resultString.length - 1);
   document.getElementById('input').value = currentString;
+}
+
+function removeAllCharacters() {
+  document.getElementById('input').value = "";
+  document.getElementById('value').innerHTML = null;
+  document.getElementById('operator').innerHTML = null;
+  setValue(null);
+  setInput(null);
+  setOperator(null);
 }
 
 function setValue(num) {
@@ -54,15 +72,33 @@ function handleOperator(op) {
 }
 
 function evaluateUnaccomplishedOperation(num1, num2, op) {
-  setValue(eval(num1 + op + num2));
-  setInput(null);
+  if (op != null) {
+    setValue(eval(num1 + op + num2));
+    setInput(null);
+  }
+  else if (op == null) {
+    setValue(input);
+    setInput(null);
+  }
 }
 
 function calculationOperation() {
   if (value == null && input == null) {
     return;
+  } else if (value != null && input == null) {
+    return value;
   } else {
-    evaluateUnaccomplishedOperation(value, input, operator);
-    setOperator(null);
+    if (operator === "/" && input == "0") {
+      handleZeroDivision();
+      removeLastCharacter();
+      input = null;
+    } else {
+      evaluateUnaccomplishedOperation(value, input, operator);
+      setOperator(null);
+    }
   }
+}
+
+function handleZeroDivision() {
+  alert("Error: Do not divide by zero!");
 }
