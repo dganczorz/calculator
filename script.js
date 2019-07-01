@@ -1,7 +1,3 @@
-window.onload = function () {
-
-}
-
 var value;
 var input;
 var operator;

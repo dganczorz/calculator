@@ -1,8 +1,24 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .main {
-  background-color: rgba(60,60,60,0.6);
+  background-color: #cab39f;
   width: 100%;
-  height: 100vh;
+  max-width: 400px;
+  height: 80vh;
+  max-height: 700px;
   overflow: hidden;
+  margin: auto 0;
+}
+
+.title {
+  font-family: Bangers-Regular, sans-serif;
+  letter-spacing: 3px;
+  color: firebrick;
+  margin: 5vh 0 5vh 0;
 }
 
 .screen-container {
@@ -10,6 +26,8 @@
   display: flex;
   flex-direction: column;
   height: 30%;
+  font-family: Digital-7;
+  margin-bottom: 20px;
 }
 
 .result-screen {
@@ -17,6 +35,8 @@
   border: none;
   background-color: white;
   margin: 20px;
+  padding: 20px 10px;
+  font-size: 26px;
 }
 
 #input {
@@ -25,6 +45,8 @@
   height: 30px;
   margin-left: auto;
   margin-right: 20px;
+  font-family: Digital-7;
+  font-size: 22px;
 }
 
 .keyboard {
@@ -34,11 +56,12 @@
 
 .keyboard button {
   font-weight: 600;
-  border: none;
-  background-color: #cbc7c3;
-  height: 40px;
-  width: 40px;
+  border: 1px solid grey;
+  background-color: #DDDDDD;
+  height: 45px;
+  width: 45px;
   margin: 10px 5px;
+  font-size: 14px;
 }
 
 .numbers {
@@ -59,5 +82,22 @@
 }
 
 #equals-btn {
-  background-color: #a59e99;
+  background-color: #c36f31;
+}
+
+@font-face {
+  font-family: 'Bangers-Regular';
+  src: url('Bangers-Regular.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'Digital-7';
+  src: url("digital7.ttf");
+}
+
+@media screen and (max-width: 345px) {
+  .keyboard button {
+    width: 40px;
+    height: 40px;
+  }
 }
